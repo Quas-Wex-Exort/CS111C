@@ -12,7 +12,7 @@ public interface HeadTailListInterface<T>
      * Entries currently in the list shall shift up to the next higher
      * index. The list's size is increased by 1.
      * @param newEntry The object to be added as a new entry.
-     * @throws ClassCastException - if the class of the new entry
+     * @throws ClassCastException if the class of the new entry
      * prevents it from being added to this list.
      * @throws IllegalArgumentException - if some property of the new entry
      * prevents it from being added to this list.
@@ -82,3 +82,4 @@ public interface HeadTailListInterface<T>
      */
     public void clear();
 }
+
