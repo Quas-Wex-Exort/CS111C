@@ -12,6 +12,10 @@ public interface HeadTailListInterface<T>
      * Entries currently in the list shall shift up to the next higher
      * index. The list's size is increased by 1.
      * @param newEntry The object to be added as a new entry.
+     * @throws ClassCastException - if the class of the new entry
+     * prevents it from being added to this list.
+     * @throws IllegalArgumentException - if some property of the new entry
+     * prevents it from being added to this list.
      */
     public void addFront(T newEntry);
 
@@ -20,6 +24,10 @@ public interface HeadTailListInterface<T>
      * Entries currently in this list are unaffected.
      * The list's size is increased by 1.
      * @param newEntry The object to be added as a new entry.
+     * @throws ClassCastException if the class of the new entry prevents it
+     * from being added to this list.
+     * @throws IllegalArgumentException if some property of the new entry
+     * prevents it from being added to this list.
      */
     public void addBack(T newEntry);
 
@@ -51,11 +59,15 @@ public interface HeadTailListInterface<T>
      * @param entry The object to be searched for.
      * @return The integer number of the position the entry appears in the
      * list or null, if no such entry exists.
+     * @throws ClassCastException if the type of the specified element is
+     * incompatible with this list
+     * @throws NullPointerException if the specified element is null and this
+     * list does not permit null elements.
      */
     public int contains(T entry);
 
     /** Detects whether this list is empty.
-     * @return  True if the bag is empty, false otherwise.
+     * @return  True if this list contains no elements, false otherwise.
      */
     public boolean isEmpty();
 
@@ -66,7 +78,7 @@ public interface HeadTailListInterface<T>
     public int size();
 
     /**
-     *  Removes all entries from this list.
+     * Removes all entries from this list.
      */
     public void clear();
 }
