@@ -246,7 +246,8 @@ public class AList<T extends Comparable<? super T>> implements ListInterface<T>,
         }
         return lessThanList;
     }
-
+    /*******************************************************************************/
+	
     public int removeEvery(T element) {
         int timesRemoved = 0;
         checkIntegrity();
