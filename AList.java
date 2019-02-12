@@ -298,8 +298,7 @@ public class AList<T extends Comparable<? super T>> implements ListInterface<T>,
                     otherArrayCount++;
                 }
             }
-
-            return Integer.compare(firstArrayCount, otherArrayCount);
+			return Integer.compare(firstArrayCount, otherArrayCount);
         }
     } // end compareTo()
 } // end AList
