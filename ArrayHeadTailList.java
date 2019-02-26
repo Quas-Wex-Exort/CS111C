@@ -7,12 +7,13 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
     public ArrayHeadTailList(int initialCapacity) {
     // if initialCapacity < 1, can set initialCapacity to 1 or greater?
-    // if initialCapacity < 1) { initialCapacity = some default value }
+    // if initialCapacity < 1) { initialCapacity = some default value? }
     
     // This format is based on array-based implementation from Module 4
         T[] tempList = (T[]) new Object[initialCapacity];
         listArray = tempList;
         numberOfElements = 0;
+        // listArray - (T[]) new Object[initialCapacity];
     }
     
     @Override
@@ -32,6 +33,17 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             }
         }
         return -1; // according to interface specification
+                
+        /* if (isEmpty()) {
+               return -1;
+           } else {
+               for (T element : listArray) {
+                   if (element.equals(anEntry) {
+                       return element;
+                   }
+               }
+           }     
+        */
     }
 
     @Override
