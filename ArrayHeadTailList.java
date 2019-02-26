@@ -31,7 +31,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
                 return i;
             }
         }
-        return -1;
+        return -1; // according to interface specification
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
         /*
         for (T element : listArray) {
-            element = null;
+            element = null; 
         }
         numberOfElements = 0;
         */
