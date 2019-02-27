@@ -17,6 +17,19 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     }
     
     @Override
+    public T removeBack() {
+        if (!isEmpty()) {
+            return listArray[numberOfElements - 1];
+        } else {
+            return null;
+        }
+        // Simplified below
+        //return (!isEmpty()) ? listArray[numberOfElements - 1] : null;
+    }
+
+    }
+    
+    @Override
     public T getEntry(int position) {
         if (!isEmpty() && (position > -1 && position <= numberOfElements)) {
             return listArray[position];
