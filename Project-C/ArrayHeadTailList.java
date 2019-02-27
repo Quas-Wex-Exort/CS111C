@@ -28,7 +28,8 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             int doubledCapacity = listArray.length * 2; // when the array is full, expand the array by doubling
             listArray = Arrays.copyOf(listArray, doubledCapacity);
         }
-        // Add newEntry to end of the list: Find the first occurrence of null, that is probably the end of the list.
+        // Add newEntry to end of the list: Find the first occurrence of null after the last element, 
+        // that is probably the end of the list.
         // add code here
         numberOfElements++;
     }
