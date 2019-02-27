@@ -29,7 +29,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             // Maybe create a temporary list holder, add newEntry to first index of that temp list
             // then copy temp list to listArray(which has doubled in size)? 
             // Check ensureCapacity() from previous modules
-	    tempListArray = (T[]) new Object[doubledCapacity]; // ????
+	    T[] tempListArray = (T[]) new Object[doubledCapacity]; // ????
 		
 		
             numberOfElements++;
@@ -104,7 +104,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     @Override
     public int contains(T anEntry) {
         for (int i = 0; i < numberOfElements; i++) {
-            if (listArray[i].equals(anEntry) {
+            if (listArray[i].equals(anEntry)) {
                 return i; // the position of the entry that was found
             }
         }
