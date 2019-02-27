@@ -7,14 +7,15 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
     private T[] listArray;
     private int numberOfElements;
-    final private int DEFAULTCAPACITY = 20;
+    //final private int DEFAULTCAPACITY = 20;
 
     public ArrayHeadTailList(int initialCapacity) {
         // This format is based on array-based implementation from Module 4
         if (initialCapacity < 1) {
-            initialCapacity = DEFAULTCAPACITY;
+            //initialCapacity = DEFAULTCAPACITY;
+            initialCapacity = 1; // ???
         }
-        listArray - (T[]) new Object[initialCapacity];
+        listArray = (T[]) new Object[initialCapacity];
     }
     
     @Override
