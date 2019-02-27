@@ -29,7 +29,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             // Maybe create a temporary list holder, add newEntry to first index of that temp list
             // then copy temp list to listArray(which has doubled in size)? 
             // Check ensureCapacity() from previous modules
-	    tempListArray = (T[]) new Object[listArray.length * 2]; // ????
+	    tempListArray = (T[]) new Object[doubledCapacity]; // ????
 		
 		
             numberOfElements++;
