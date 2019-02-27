@@ -4,29 +4,45 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
     private T[] listArray;
     private int numberOfElements;
+    final private int DEFAULTCAPACITY = 20;
 
     public ArrayHeadTailList(int initialCapacity) {
-    // if initialCapacity < 1, can set initialCapacity to 1 or greater?
-    // if initialCapacity < 1) { initialCapacity = some default value? }
-    
     // This format is based on array-based implementation from Module 4
-        T[] tempList = (T[]) new Object[initialCapacity];
-        listArray = tempList;
-        numberOfElements = 0;
-        // listArray - (T[]) new Object[initialCapacity];
+        if (initialCapacity < 1) {
+            initialCapacity = DEFAULTCAPACITY;
+        }
+        listArray - (T[]) new Object[initialCapacity];
+    }
+    
+    @Override
+    public void addFront(T newEntry) {
+        
+    }
+    
+    @Override
+    public void addBack(T newEntry) {
+        
+    }
+    
+    @Override
+    public T removeFront() {
+    
     }
     
     @Override
     public T removeBack() {
+        // Simplified below
+        //return (!isEmpty()) ? listArray[numberOfElements - 1] : null;
         if (!isEmpty()) {
             return listArray[numberOfElements - 1];
         } else {
             return null; // if list is empty
         }
-        // Simplified below
-        //return (!isEmpty()) ? listArray[numberOfElements - 1] : null;
     }
-
+    
+    @Override
+    public void display() {
+    
     }
     
     @Override
@@ -46,17 +62,6 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             }
         }
         return -1; // according to interface specification
-                
-        /* if (isEmpty()) {
-               return -1;
-           } else {
-               for (T element : listArray) {
-                   if (element.equals(anEntry) {
-                       return element;
-                   }
-               }
-           }     
-        */
     }
     
     // Removes elements But does it retain the capacity??
@@ -66,11 +71,6 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             listArray[i] = null;
         }
         numberOfElements = 0;
-        // If capacity is retained...
-        /*
-        listArray = numberOfElements == 0 ? (T[]) new Object[some default value here] : (T[]) new Object[numberOfElements];
-        numberOfElements = 0;
-        */
     }
 
     @Override
