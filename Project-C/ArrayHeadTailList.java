@@ -53,7 +53,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         /* for (int i = 0; i < listArray.Length; i++) {
                if (listArray[i].equals(null) {
                    listArray[i] = newEntry;
-                   break;
+                   exit;
                }
            }
            numberOfElements++;
