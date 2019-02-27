@@ -20,8 +20,18 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     
     @Override
     public void addFront(T newEntry) {
-        // when the array is full, expand the array by doubling
+        if (isEmpty()) {
+            listArray[0] = newEntry;
+            numberOfElements++;
+        } else if {
+            // when the array is full, expand the array by doubling
         // shift everything down +1
+        } else { // numberOfElements > 0
+            
+                // shift everything down +1
+            listArray[0] = newEntry;
+                numberOfElements++;
+        }
     }
     
     @Override
