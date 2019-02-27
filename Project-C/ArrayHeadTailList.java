@@ -10,7 +10,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     final private int DEFAULTCAPACITY = 20;
 
     public ArrayHeadTailList(int initialCapacity) {
-    // This format is based on array-based implementation from Module 4
+        // This format is based on array-based implementation from Module 4
         if (initialCapacity < 1) {
             initialCapacity = DEFAULTCAPACITY;
         }
@@ -19,17 +19,34 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     
     @Override
     public void addFront(T newEntry) {
-        
+        // when the array is full, expand the array by doubling
     }
     
     @Override
     public void addBack(T newEntry) {
-        
+        if (numberOfElements == listArray.length) { // full
+            int doubledCapacity = listArray.length * 2; // when the array is full, expand the array by doubling
+            listArray = Arrays.copyOf(listArray, doubledCapacity);
+        }
+        // Add newEntry to end of the list: Find the first occurrence of null, that is probably the end of the list.
+        // add code here
+        numberOfElements++;
     }
     
     @Override
     public T removeFront() {
-    
+        if (!isEmpty()) {
+            T firstElementRemoved = listArray[0];
+            /* 
+           
+            Shifting happens here...
+            
+            */
+            numberOfElements -= 1; // decrease list size by 1
+            return firstElementRemoved; // reference to the removed item
+        } else {
+            return null; // if list is empty
+        }
     }
     
     @Override
@@ -37,7 +54,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         // Simplified below
         //return (!isEmpty()) ? listArray[numberOfElements - 1] : null;
         if (!isEmpty()) {
-            return listArray[numberOfElements - 1];
+            return listArray[numberOfElements - 1]; // reference to the removed item
         } else {
             return null; // if list is empty
         }
@@ -61,10 +78,10 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     public int contains(T anEntry) {
         for (int i = 0; i < numberOfElements; i++) {
             if (listArray[i].equals(anEntry) {
-                return i;
+                return i; // the position of the entry that was found
             }
         }
-        return -1; // according to interface specification
+        return -1; // not found
     }
     
     // Removes elements But does it retain the capacity??
