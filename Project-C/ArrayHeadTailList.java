@@ -7,12 +7,11 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
     private T[] listArray;
     private int numberOfElements;
-    //final private int DEFAULTCAPACITY = 20;
-
+  
     public ArrayHeadTailList(int initialCapacity) {
         // This format is based on array-based implementation from Module 4
         if (initialCapacity < 1) {
-            //initialCapacity = DEFAULTCAPACITY;
+            //initialCapacity = SOMEDEFAULTCAPACITYHERE;
             initialCapacity = 1; // ???
         }
         listArray = (T[]) new Object[initialCapacity];
@@ -23,14 +22,20 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         if (isEmpty()) {
             listArray[0] = newEntry;
             numberOfElements++;
-        } else if {
+        } else if (!isEmpty() && numberOfElements == listArray.length) {
+            int doubledCapacity = listArray.length * 2;
             // when the array is full, expand the array by doubling
-        // shift everything down +1
-        } else { // numberOfElements > 0
-            
-                // shift everything down +1
+            // shift everything down +1
+            // Maybe create a temporary list holder, add newEntry to first index of that temp list
+            // then copy temp list to listArray(which has doubled in size)? 
+            // Check ensureCapacity() from previous modules
+            numberOfElements++;
+        } else { // numberOfElements > 0, but not full
+            for (int i = numberOfElements; i > 0; i--) {
+				listArray[i] = listArray[i - 1];
+            }
             listArray[0] = newEntry;
-                numberOfElements++;
+            numberOfElements++;
         }
     }
     
