@@ -26,14 +26,13 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     
     @Override
     public void addBack(T newEntry) {
-        int oldLength = listArray.length;
         if (numberOfElements == listArray.length) { // if full
             int doubledCapacity = listArray.length * 2; // when the array is full, expand the array by doubling
             listArray = Arrays.copyOf(listArray, doubledCapacity);
         }
         // Add newEntry to end of the list: Find the first occurrence of null after the last element, 
-        // that is probably the end of the list. Maybe traverse the old size so it's quicker?
-        /* for (int i = 0; i < oldLength; i++) {
+        // that is probably the end of the list.
+        /* for (int i = 0; i < listArray.Length; i++) {
                if (listArray[i].equals(null) {
                    listArray[i] = newEntry;
                    break;
