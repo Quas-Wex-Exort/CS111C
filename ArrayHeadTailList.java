@@ -21,7 +21,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         if (!isEmpty()) {
             return listArray[numberOfElements - 1];
         } else {
-            return null;
+            return null; // if list is empty
         }
         // Simplified below
         //return (!isEmpty()) ? listArray[numberOfElements - 1] : null;
@@ -32,9 +32,9 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     @Override
     public T getEntry(int position) {
         if (!isEmpty() && (position > -1 && position <= numberOfElements)) {
-            return listArray[position];
+            return listArray[position]; // reference to the indicated entry
         } else {
-            return null; // according to interface specification
+            return null; // according to interface specification, return null if index is out of bounds
         }
     }
     
@@ -66,7 +66,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             listArray[i] = null;
         }
         numberOfElements = 0;
-        // If capacity is retained
+        // If capacity is retained...
         /*
         listArray = numberOfElements == 0 ? (T[]) new Object[some default value here] : (T[]) new Object[numberOfElements];
         numberOfElements = 0;
