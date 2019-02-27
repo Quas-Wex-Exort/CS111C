@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+/**
+ * Array-based implementation of this course's HeadTailListInterface.
+ */ 
 public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
     private T[] listArray;
