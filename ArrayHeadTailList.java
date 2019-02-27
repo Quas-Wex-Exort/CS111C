@@ -45,18 +45,17 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
            }     
         */
     }
-
+    
+    // Removes elements But does it retain the capacity??
     @Override
     public void clear() {
         for (int i = 0; i < numberOfElements; i++) {
             listArray[i] = null;
         }
         numberOfElements = 0;
-
+        // If capacity is retained
         /*
-        for (T element : listArray) {
-            element = null; 
-        }
+        listArray = numberOfElements == 0 ? (T[]) new Object[some default value here] : (T[]) new Object[numberOfElements];
         numberOfElements = 0;
         */
     }
