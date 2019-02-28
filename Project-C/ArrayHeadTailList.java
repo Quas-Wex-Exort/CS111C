@@ -92,8 +92,10 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     
     @Override
     public void display() {
-	// Sample output!
+	// Sample output when list has some element/s
 	// 3 elements; capacity = 10	[7, 10, 5]
+	// Sample output, numberOfElements = 0
+	// 0 elements; capacity = 10
     }
     
     @Override
@@ -101,7 +103,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         if (!isEmpty() && (position > -1 && position <= numberOfElements)) {
             return listArray[position]; // reference to the indicated entry
         } else {
-            return null; // according to interface specification, return null if index is out of bounds
+            return null; // according to interface specification, return null if position->index is out of bounds
         }
     }
     
