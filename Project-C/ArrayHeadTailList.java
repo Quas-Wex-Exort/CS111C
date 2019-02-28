@@ -38,7 +38,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             numberOfElements++;
         } else { // numberOfElements > 0, but not full
             for (int i = numberOfElements; i > 0; i--) {
-				listArray[i] = listArray[i - 1];
+	    		listArray[i] = listArray[i - 1];
             }
             listArray[0] = newEntry;
             numberOfElements++;
@@ -54,7 +54,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         // Add newEntry to end of the list: Find the first occurrence of null after the last element, 
         // that is probably the end of the list.
         /* for (int i = 0; i < listArray.Length; i++) {
-               if (listArray[i].equals(null) {
+               if (listArray[i] == null) {
                    listArray[i] = newEntry;
                    exit;
                }
