@@ -92,7 +92,8 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     
     @Override
     public void display() {
-    
+	// Sample output!
+	// 3 elements; capacity = 10	[7, 10, 5]
     }
     
     @Override
