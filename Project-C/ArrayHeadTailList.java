@@ -23,15 +23,18 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
             listArray[0] = newEntry;
             numberOfElements++;
         } else if (!isEmpty() && numberOfElements == listArray.length) {
-            int doubledCapacity = listArray.length * 2;
+        	int doubledCapacity = listArray.length * 2;
             // when the array is full, expand the array by doubling
             // shift everything down +1
             // Maybe create a temporary list holder, add newEntry to first index of that temp list
-            // then copy temp list to listArray(which has doubled in size)? 
+            // then brute-force copy temp list to listArray(which has doubled in size)? 
             // Check ensureCapacity() from previous modules
-	    T[] tempListArray = (T[]) new Object[doubledCapacity]; // ????
-		
-		
+	    	T[] tempListArray = (T[]) new Object[doubledCapacity]; // ????
+			tempListArray[0] = newEntry;
+			// Arrays.copyOf();
+			for (int i = 1; i <= listArray.length + 1; i++) {
+				tempListArray[i] = listArray[i];
+			}
             numberOfElements++;
         } else { // numberOfElements > 0, but not full
             for (int i = numberOfElements; i > 0; i--) {
