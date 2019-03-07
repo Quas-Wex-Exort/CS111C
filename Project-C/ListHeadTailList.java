@@ -57,7 +57,8 @@ public class ListHeadTailList<T> implements HeadTailListInterface<T> {
         System.out.println(Arrays.toString(list.toArray()));
 
     }
-  
+    
+    /*
     @Override
     public int contains(T anEntry) {
         for (int i = 0; i < list.size(); i++) {
@@ -67,6 +68,14 @@ public class ListHeadTailList<T> implements HeadTailListInterface<T> {
         }
 
         return -1;
+    }
+    */
+    public int contains(T anEntry) {
+        if (list.contains(anEntry)) {
+            return list.indexOf(anEntry);
+        } else {
+            return -1;
+        }
     }
 
     @Override
