@@ -46,6 +46,17 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
         }
     }
     
+    public T removeFront() {
+        T elementRemoved = null;
+        if (!this.isEmpty()) {
+            if (head != null) {
+                elementRemoved = this.head.data;
+                head = head.next;
+            }
+        }
+        return elementRemoved;
+    }
+    
     public void clear() {
         head = tail = null;
     }
