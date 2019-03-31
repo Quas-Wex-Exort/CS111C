@@ -18,11 +18,11 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
      */
     public void addFront(T newEntry) {
         Node newNode = new Node(newEntry);
-        if (this.isEmpty()) {
+        if (!this.isEmpty()) {
+            newNode.setNextNode(head);
             head = newNode;
-            tail = newNode;
         } else {
-            newNode.next = head;
+            tail = newNode;
             head = newNode;
         }
     }
