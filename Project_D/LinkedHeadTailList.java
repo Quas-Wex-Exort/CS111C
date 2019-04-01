@@ -9,13 +9,6 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
         tail = null;
     }
     
-    /**
-     * Adds a new entry to the beginning of the list.
-     * Entries currently in the list are shifted down.
-     * The list's size is increased by 1.
-     *
-     * @param newEntry The object to be added as a new entry.
-     */
     public void addFront(T newEntry) {
         Node newNode = new Node(newEntry);
         if (!this.isEmpty()) {
@@ -27,13 +20,6 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
         }
     }
     
-    /**
-     * Adds a new entry to the end of the list.
-     * Entries currently in the list are unaffected.
-     * The list's size is increased by 1.
-     *
-     * @param newEntry The object to be added as a new entry.
-     */
     public void addBack(T newEntry){
         Node newNode = new Node(newEntry);
         if (!this.isEmpty()) {
@@ -57,17 +43,19 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
         return elementRemoved;
     }
     
+    public T removeBack() {
+    
+    }
+    
     public void clear() {
         head = tail = null;
     }
     
     public T getEntry(int givenPosition) {
         Node currentNode = head;
-        if (!this.isEmpty() && (givenPosition >= 0 && givenPosition < this.size())) {
-            if (givenPosition == 0) {
-                return head.data;
-            } else if (givenPosition == this.size()) {
-                return tail.data;
+        if (!this.isEmpty() && (givenPosition >= 0 && givenPosition < this.size()))  {
+            if (givenPosition == 0) { // singleton list
+                return head.data; // or return tail.data
             } else {
                 for (int i = 0; i < givenPosition; i++){
                     currentNode = currentNode.next;
@@ -78,21 +66,7 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
         return null;
     }
     
-    public boolean isEmpty() {
-        return this.size() == 0;
-    }
-    
-    public int size() {
-        int count = 0;
-        Node currentNode = head;
-        while (currentNode != null) {
-            count++;
-            currentNode = currentNode.next;
-        }
-        return count;
-    }
-    
-    public void display(){
+    public void display() {
         Node currentNode = head;
         T[] result = (T[]) new Object[size()];
         int index = 0;
@@ -108,6 +82,25 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
             System.out.println("[]");
         }
     }
+    
+    public int contains(T anEntry) {
+        
+    }
+    
+    public int size() {
+        int count = 0;
+        Node currentNode = head;
+        while (currentNode != null) {
+            count++;
+            currentNode = currentNode.next;
+        }
+        return count;
+    }
+    
+    public boolean isEmpty() {
+        return this.size() == 0;
+    }
+    
     private class Node {
         private T data; // Entry in list
         private Node next; // Link to next node
