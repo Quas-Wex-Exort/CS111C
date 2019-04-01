@@ -114,7 +114,7 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
         return this.size() == 0;
     }
     
-    public class Node {
+    private class Node {
         private T data; // Entry in list
         private Node next; // Link to next node
 
