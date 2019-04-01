@@ -92,6 +92,22 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
         return count;
     }
     
+    public void display(){
+        Node currentNode = head;
+        T[] result = (T[]) new Object[size()];
+        int index = 0;
+        while (currentNode != null &&  index < this.size()) {
+            result[index] = currentNode.data;
+            currentNode = currentNode.next;
+            index++;
+        }
+        
+        if (!this.isEmpty()) {
+            System.out.println(Arrays.toString(result) + "\t\thead= " + head.data + "\t\ttail= " + tail.data);
+        } else {
+            System.out.println("[]");
+        }
+    }
     private class Node {
         private T data; // Entry in list
         private Node next; // Link to next node
