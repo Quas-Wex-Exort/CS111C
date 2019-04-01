@@ -57,8 +57,10 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
             if (givenPosition == 0) { // singleton list
                 return head.data; // or return tail.data
             } else {
-                for (int i = 0; i < givenPosition; i++){
+                int index = 0;
+                while (index < givenPosition) {
                     currentNode = currentNode.next;
+                    index++;
                 }
                 return currentNode.data;
             }
@@ -84,7 +86,21 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
     }
     
     public int contains(T anEntry) {
+        Node currentNode = head;
+        int position = -1;
+        boolean found = false;
+        int index = 0;
         
+        while (currentNode != null && !found && index < this.size()) {
+            if (anEntry.equals(currentNode.data) {
+                found = true;
+                position = index;
+            } else {
+                currentNode = currentNode.next; 
+                index++;
+            }
+        }
+        return position;
     }
     
     public int size() {
