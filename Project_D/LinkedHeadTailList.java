@@ -44,7 +44,10 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
     }
     
     public T removeBack() {
-    
+        T elementRemoved = null;
+        
+        
+        return elementRemoved;
     }
     
     public void clear() {
