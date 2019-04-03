@@ -33,21 +33,35 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
     }
     
     public T removeFront() {
-        T elementRemoved = null;
+        T headRemoved = null;
         if (!this.isEmpty()) {
             if (head != null) {
-                elementRemoved = this.head.data;
-                head = head.next;
+                headRemoved = this.head.data; // get old head's value
+                head = head.next; // set new head 
             }
         }
-        return elementRemoved;
+        return headRemoved;
     }
     
     public T removeBack() {
-        T elementRemoved = null;
-        
-        
-        return elementRemoved;
+        T tailRemoved = null;
+        if (!this.isEmpty()) {
+            if (head == tail) { // singleton chain
+                head = null;
+                tail = null;
+            } else {
+                Node nodeBeforeTail = head;
+                while (nodeBeforeTail.next != tail) {
+                    nodeBeforeTail = nodeBeforeTail.next;
+                }
+                tail = nodeBeforeTail; // set new tail
+                tailRemoved = tail.next.data; // get old tail's value
+                tail.next = null; // delete original tail
+            }
+        } else {
+            return null;
+        }
+        return tailRemoved;
     }
     
     public void clear() {
