@@ -235,10 +235,12 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         return Objects.hash(head, tail);
     }
     
+                
+    
     private class Node {
         
-        private T data; // Entry in list
-        private Node next; // Link to next node
+        private T data;
+        private Node next;
 
         private Node(T dataPortion) {
             data = dataPortion;
