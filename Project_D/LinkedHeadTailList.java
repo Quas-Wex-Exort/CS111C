@@ -141,7 +141,8 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         }
         
         if (!this.isEmpty()) {
-            System.out.println(Arrays.toString(result) + "\t\thead= " + head.data + "\t\ttail= " + tail.data);
+            System.out.println(Arrays.toString(result) + " head= " + head.data + "   tail" +
+                    " = " + tail.data);
         } else {
             System.out.println("[]");
         }
