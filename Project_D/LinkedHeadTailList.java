@@ -132,7 +132,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     public void display() {
         
         Node currentNode = head;
-        T[] result = (T[]) new Object[size()];
+        T[] result = (T[]) new Comparable[size()];
         int index = 0;
         while (currentNode != null &&  index < this.size()) {
             result[index] = currentNode.data;
