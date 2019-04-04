@@ -267,3 +267,4 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
 		} // end setNextNode
 	} // end Node
 }
+
