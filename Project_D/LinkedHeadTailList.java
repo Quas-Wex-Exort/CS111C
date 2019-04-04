@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
+public class LinkedHeadTailList<T extends Comparable<? super T>> implements HeadTailListInterface<T>, Comparable<LinkedHeadTailList<T>> {
 
     private Node head, tail;
 
@@ -129,6 +129,30 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
     
     public boolean isEmpty() {
         return this.size() == 0;
+    }
+    
+     @Override
+    public int compareTo(LinkedHeadTailList<T> otherList) {
+        Node currentNode = head;
+        int position = 0;
+        while (currentNode != null && otherList.getEntry(position) != null) {
+            if ((currentNode.data.compareTo(otherList.getEntry(position))) < 0) {
+                return -1;
+            } else if ((currentNode.data.compareTo(otherList.getEntry(position))) > 0) {
+                    return 1;
+            } else {
+                currentNode = currentNode.next;
+                position++;
+            }
+
+        }
+        if ((Integer.compare(this.size(),otherList.size())) > 0) {
+            return 1;
+        }
+        if ((Integer.compare(this.size(),otherList.size()) < 0)) {
+            return -1;
+        }
+        return 0;
     }
     
     private class Node {
