@@ -11,12 +11,12 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Adds a new entry to the beginning of the list. 
-	 * Entries currently in the list are shifted down.
-	 * The list's size is increased by 1.
-	 * 
-	 * @param newEntry The object to be added as a new entry.
-	 */
+     * Adds a new entry to the beginning of the list. 
+     * Entries currently in the list are shifted down.
+     * The list's size is increased by 1.
+     * 
+     * @param newEntry The object to be added as a new entry.
+     */
     public void addFront(T newEntry) {
         
         Node newNode = new Node(newEntry);
@@ -30,12 +30,12 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Adds a new entry to the end of the list. 
-	 * Entries currently in the list are unaffected.
-	 * The list's size is increased by 1.
-	 * 
-	 * @param newEntry The object to be added as a new entry.
-	 */
+     * Adds a new entry to the end of the list. 
+     * Entries currently in the list are unaffected.
+     * The list's size is increased by 1.
+     * 
+     * @param newEntry The object to be added as a new entry.
+     */
     public void addBack(T newEntry) {
         
         Node newNode = new Node(newEntry);
@@ -50,12 +50,12 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Removes an entry from the beginning of the list. 
-	 * Entries currently in the list are shifted up.
-	 * The list's size is decreased by 1.
-	 * 
-	 * @return A reference to the removed entry or null if the list is empty.
-	 */
+     * Removes an entry from the beginning of the list. 
+     * Entries currently in the list are shifted up.
+     * The list's size is decreased by 1.
+     * 
+     * @return A reference to the removed entry or null if the list is empty.
+     */
     public T removeFront() {
         
         T headRemoved = null;
@@ -69,12 +69,12 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Removes an entry from the end of the list. 
-	 * Entries currently in the list are unaffected.
-	 * The list's size is decreased by 1.
-	 * 
-	 * @return A reference to the removed entry or null if the list is empty.
-	 */
+     * Removes an entry from the end of the list. 
+     * Entries currently in the list are unaffected.
+     * The list's size is decreased by 1.
+     * 
+     * @return A reference to the removed entry or null if the list is empty.
+     */
     public T removeBack() {
         
         T tailRemoved = null;
@@ -97,18 +97,20 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         return tailRemoved;
     }
     
-    /** Removes all entries from this list. */
+    /** 
+     * Removes all entries from this list. 
+     */
     public void clear() {
         head = tail = null;
     }
     
     /**
-	 * Retrieves the entry at a given position in this list.
-	 * 
-	 * @param givenPosition An integer that indicates the position of the desired entry.
-	 * @return A reference to the indicated entry or null if the index is out of bounds (less
-	 * than zero, greater than or equal to the size).
-	 */
+     * Retrieves the entry at a given position in this list.
+     * 
+     * @param givenPosition An integer that indicates the position of the desired entry.
+     * @return A reference to the indicated entry or null if the index is out of bounds (less
+     * than zero, greater than or equal to the size).
+     */
     public T getEntry(int givenPosition) {
         
         Node currentNode = head;
@@ -125,8 +127,8 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Displays the contents of the list to the console, in order.
-	 */
+     * Displays the contents of the list to the console, in order.
+     */
     public void display() {
         
         Node currentNode = head;
@@ -146,11 +148,11 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Checks whether this list contains a given entry.
-	 * 
-	 * @param anEntry the object to search for in the list.
-	 * @return the position of the entry that was found or -1 if the object is not found.
-	 */
+     * Checks whether this list contains a given entry.
+     * 
+     * @param anEntry the object to search for in the list.
+     * @return the position of the entry that was found or -1 if the object is not found.
+     */
     public int contains(T anEntry) {
         
         Node currentNode = head;
@@ -171,10 +173,10 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Gets the length of this list.
-	 * 
-	 * @return The integer number of entries currently in the list.
-	 */
+     * Gets the length of this list.
+     * 
+     * @return The integer number of entries currently in the list.
+     */
     public int size() {
         int count = 0;
         Node currentNode = head;
@@ -186,10 +188,10 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
     
     /**
-	 * Checks whether this list is empty.
-	 * 
-	 * @return True if the list is empty, or false if the list contains one or more elements.
-	 */
+     * Checks whether this list is empty.
+     * 
+     * @return True if the list is empty, or false if the list contains one or more elements.
+     */
     public boolean isEmpty() {
         return this.size() == 0;
     }
