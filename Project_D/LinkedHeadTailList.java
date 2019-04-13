@@ -11,8 +11,8 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
 
     public void addFront(T newEntry) {
-		Node newNode = new Node(newEntry);
-		if (!this.isEmpty()) {
+        Node newNode = new Node(newEntry);
+        if (!this.isEmpty()) {
             newNode.setNextNode(head);
             head = newNode;
         } else {
