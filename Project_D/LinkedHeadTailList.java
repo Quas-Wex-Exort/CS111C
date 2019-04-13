@@ -46,8 +46,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         T tailRemoved = null;
         if (!this.isEmpty()) {
             if (head == tail) { // singleton chain
-                head = null;
-                tail = null;
+                head = tail = null;
             } else {
                 Node nodeBeforeTail = head;
                 while (nodeBeforeTail.getNextNode() != tail) {
@@ -92,7 +91,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         }
 
         if (!this.isEmpty()) {
-            System.out.println(Arrays.toString(result) + " head= " + head.getData() + "   tail" +
+            System.out.println(Arrays.toString(result) + "  head= " + head.getData() + "  tail" +
                     "=" + tail.getData());
         } else {
             System.out.println("[]");
