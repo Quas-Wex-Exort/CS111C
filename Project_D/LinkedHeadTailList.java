@@ -22,7 +22,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
 	
     public void addBack(T newEntry){
         Node newNode = new Node(newEntry);
-		if (!this.isEmpty()) {
+        if (!this.isEmpty()) {
             newNode.setNextNode(null);
             tail.setNextNode(newNode);
             tail = newNode;
@@ -69,7 +69,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
 
     public T getEntry(int givenPosition) {
         Node currentNode = head;
-		if (!this.isEmpty() && (givenPosition >= 0 && givenPosition < this.size())) {
+        if (!this.isEmpty() && (givenPosition >= 0 && givenPosition < this.size())) {
             int index = 0;
             while (currentNode.getNextNode() != null && index < givenPosition) {
                 currentNode = currentNode.getNextNode();
