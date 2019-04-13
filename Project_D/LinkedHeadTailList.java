@@ -161,7 +161,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         }
     }
 	
-    public class Node {
+    private class Node {
         private T data; // Entry in list
         private Node next; // Link to next node
 
