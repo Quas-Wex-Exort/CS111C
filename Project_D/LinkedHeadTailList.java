@@ -95,8 +95,8 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         Node currentNode = head;
         System.out.print("[");
         while (currentNode != null) {
-            if (currentNode.next!=null) {
-                System.out.print(currentNode.data+", ");
+            if (currentNode.next!= null) {
+                System.out.print(currentNode.data + ", ");
             } else {
                 System.out.print(currentNode.data);
             }
