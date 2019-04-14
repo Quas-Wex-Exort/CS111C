@@ -1,27 +1,46 @@
-import java.util.Arrays;
 import java.util.Objects;
 
-//public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
 public class LinkedHeadTailList<T extends Comparable<? super T>> implements HeadTailListInterface<T>, Comparable<LinkedHeadTailList<T>> {
     private Node head, tail;
+    private int size = 0;
 
     public LinkedHeadTailList() {
         head = null;
         tail = null;
+        size = 0;
+
     }
 
+    /**
+     * Adds a new entry to the beginning of the list.
+     * Entries currently in the list are shifted down.
+     * The list's size is increased by 1.
+     *
+     * @param newEntry The object to be added as a new entry.
+     */
     public void addFront(T newEntry) {
+
         Node newNode = new Node(newEntry);
+
         if (!this.isEmpty()) {
             newNode.setNextNode(head);
             head = newNode;
         } else {
             head = tail = newNode;
         }
+        size++;
     }
-	
+
+    /**
+     * Adds a new entry to the end of the list.
+     * Entries currently in the list are unaffected.
+     * The list's size is increased by 1.
+     *
+     * @param newEntry The object to be added as a new entry.
+     */
     public void addBack(T newEntry){
         Node newNode = new Node(newEntry);
+
         if (!this.isEmpty()) {
             newNode.setNextNode(null);
             tail.setNextNode(newNode);
@@ -29,6 +48,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         } else {
             head = tail = newNode;
         }
+        size++;
     }
 
     public T removeFront() {
@@ -38,6 +58,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
                 result = head.getData(); // get old head's value
                 head = head.getNextNode(); // set new head
             }
+            size--;
         }
         return result;
     }
@@ -46,7 +67,8 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         T tailRemoved = null;
         if (!this.isEmpty()) {
             if (head == tail) { // singleton chain
-                head = tail = null;
+                head = null;
+                tail = null;
             } else {
                 Node nodeBeforeTail = head;
                 while (nodeBeforeTail.getNextNode() != tail) {
@@ -56,6 +78,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
                 tailRemoved = tail.getNextNode().getData(); // get old tail's value
                 tail.next = null; // delete original tail
             }
+            size--;
         } else {
             return null;
         }
@@ -65,10 +88,12 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
 
     public void clear() {
         head = tail = null;
+        size = 0;
     }
 
     public T getEntry(int givenPosition) {
         Node currentNode = head;
+
         if (!this.isEmpty() && (givenPosition >= 0 && givenPosition < this.size())) {
             int index = 0;
             while (currentNode.getNextNode() != null && index < givenPosition) {
@@ -82,19 +107,18 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
 
     public void display() {
         Node currentNode = head;
-        T[] result = (T[]) new Comparable[size()]; // unchecked casting...
-        int index = 0;
-        while (currentNode != null && index < this.size()) {
-            result[index] = currentNode.data;
+        System.out.print("[");
+        while (currentNode != null) {
+            if (currentNode.next!=null) {
+                System.out.print(currentNode.data+", ");
+            } else {
+                System.out.print(currentNode.data);
+            }
             currentNode = currentNode.next;
-            index++;
         }
-
-        if (!this.isEmpty()) {
-            System.out.println(Arrays.toString(result) + "  head= " + head.getData() + "  tail" +
-                    "=" + tail.getData());
-        } else {
-            System.out.println("[]");
+        System.out.print("]");
+        if(!this.isEmpty()) {
+            System.out.println("\thead=" + head.getData() + "\ttail=" + tail.getData());
         }
     }
 
@@ -116,18 +140,26 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     }
 
     public int size() {
-        int count = 0;
-        Node currentNode = head;
-        while (currentNode != null) {
-            count++;
-            currentNode = currentNode.getNextNode();
-        }
-        return count;
+        return size;
     }
 
     public boolean isEmpty() {
-        return this.head == null;
-	}
+        return (this.head == null);
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof LinkedHeadTailList) {
+            LinkedHeadTailList list = (LinkedHeadTailList) obj;
+            return this.compareTo(list) == 0;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(head, tail);
+    }
 
     /**
      * Implements comparable.
@@ -160,7 +192,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
             return (compareVal > 0 ? 1 : -1);
         }
     }
-	
+
     private class Node {
         private T data; // Entry in list
         private Node next; // Link to next node
