@@ -10,14 +10,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         size = 0;
 
     }
-
-    /**
-     * Adds a new entry to the beginning of the list.
-     * Entries currently in the list are shifted down.
-     * The list's size is increased by 1.
-     *
-     * @param newEntry The object to be added as a new entry.
-     */
+    
     public void addFront(T newEntry) {
 
         Node newNode = new Node(newEntry);
@@ -30,14 +23,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         }
         size++;
     }
-
-    /**
-     * Adds a new entry to the end of the list.
-     * Entries currently in the list are unaffected.
-     * The list's size is increased by 1.
-     *
-     * @param newEntry The object to be added as a new entry.
-     */
+    
     public void addBack(T newEntry){
         Node newNode = new Node(newEntry);
 
