@@ -1,7 +1,6 @@
 import java.util.*;
 
-public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends BinarySearchTree<T>
-		implements SearchTreeInterface<T>, java.io.Serializable {
+public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends BinarySearchTree<T> implements SearchTreeInterface<T>, java.io.Serializable {
 
 	public BinarySearchTreeWithDups() {
 		super();
@@ -118,11 +117,9 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 			BinaryNode <T> topStack = nodeStack.pop();
 			if (topStack.hasLeftChild()) {
 				nodeStack.push(topStack.getLeftChild());
-				//nodeStack2.push(topStack.getLeftChild());
 			}
 			if (topStack.hasRightChild()) {
 				nodeStack.push(topStack.getRightChild());
-				//nodeStack2.push(topStack.getRightChild());
 			}
 			if (target.compareTo(topStack.getData()) < 0) {
 				count++;
@@ -134,9 +131,8 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 
 	// YOUR EXTRA CREDIT CODE HERE! THIS METHOD MUST BE O(n).
 	// YOU ARE ALLOWED TO USE A HELPER METHOD. THE METHOD CAN BE ITERATIVE OR RECURSIVE.
-
-	public int countUniqueValues() {
-	
+    public int countUniqueValues() {
+	    // nothing here yet
 	}
     
 	public int getLeftHeight() {
