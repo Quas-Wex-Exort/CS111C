@@ -164,23 +164,6 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 		return count;
 	}
 
-	/*
-	public int countUniqueValues() {
-		//TreeSet<T> someTree = new TreeSet <>();
-		LinkedHashSet<T> hashTable = new LinkedHashSet<T>();
-		return countUniqueValuesHelper(getRootNode(), hashTable);
-	}
-
-	private int countUniqueValuesHelper(BinaryNode<T> root, LinkedHashSet<T> hashTable){
-
-		if (root!=null){
-			hashTable.add(root.getData());
-			countUniqueValuesHelper(root.getLeftChild(),hashTable);
-			countUniqueValuesHelper(root.getRightChild(),hashTable);
-		}
-		return hashTable.size();
-	}*/
-
 	public int getLeftHeight() {
 		BinaryNode<T> rootNode = getRootNode();
 		if(rootNode==null) {
