@@ -7,10 +7,10 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
         super();	
     }
 
-	public BinarySearchTreeWithDups(T rootEntry) {
-		super(rootEntry);
-		setRootNode(new BinaryNode <T>(rootEntry));
-	}
+    public BinarySearchTreeWithDups(T rootEntry) {
+	super(rootEntry);
+	setRootNode(new BinaryNode <T>(rootEntry));
+    }
 
 	@Override
 	public T add(T newEntry) {
