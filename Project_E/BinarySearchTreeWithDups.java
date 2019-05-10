@@ -234,7 +234,5 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 			return rootNode.getRightChild().getHeight();
 		}
 	}
-	
-
 }
 
