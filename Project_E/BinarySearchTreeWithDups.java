@@ -28,6 +28,7 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 		BinaryNode<T> currentNode = getRootNode();
 		BinaryNode<T> newNode = new BinaryNode<T>(newEntry);
 		boolean found = false;
+	
 		while(currentNode != null &&!found) {
 			int compareVal = currentNode.getData().compareTo(newEntry);
 			if (compareVal < 0) {
@@ -71,7 +72,7 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 					currentNode.setLeftChild(new BinaryNode <>(newEntry));
 					found = true;
 				}
-
+			
 			} else { // if comparison > 0
 				if (currentNode.hasRightChild()) {
 					currentNode = currentNode.getRightChild();
@@ -86,8 +87,8 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 
 	// YOUR CODE HERE! THIS METHOD CANNOT BE RECURSIVE.
 	// MAKE SURE TO TAKE ADVANTAGE OF THE SORTED NATURE OF THE BST!
-    public int countEntriesNonRecursive(T target) {
-        int count = 0;
+	public int countEntriesNonRecursive(T target) {
+      	int count = 0;
         BinaryNode <T> currentNode = getRootNode();
 
         while (currentNode != null) {
