@@ -1,13 +1,13 @@
 import java.util.*;
 
-public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends BinarySearchTree<T>
-		implements SearchTreeInterface<T>, java.io.Serializable {
+public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends BinarySearchTree<T> 
+	implements SearchTreeInterface<T>, java.io.Serializable {
 
 	public BinarySearchTreeWithDups() {
 		super();
 	}
 
-	public BinarySearchTreeWithDups(T rootEntry) {
+    public BinarySearchTreeWithDups(T rootEntry) {
 		super(rootEntry);
 		setRootNode(new BinaryNode <T>(rootEntry));
 	}
