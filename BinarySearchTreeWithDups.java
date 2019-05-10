@@ -212,21 +212,6 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 		return set.size();
 	}
 
-	/*
-	public int countUniqueValues() {
-		Iterator <T> iterator = this.getInorderIterator();
-		int count = 0;
-		T last = null;
-		while (iterator.hasNext()) {
-			T nodeData = iterator.next();
-			if (!nodeData.equals(last)) {
-				count++;
-				last = nodeData;
-			}
-		}
-		return count;
-	}*/
-
 	public int getLeftHeight() {
 		BinaryNode<T> rootNode = getRootNode();
 		if(rootNode==null) {
