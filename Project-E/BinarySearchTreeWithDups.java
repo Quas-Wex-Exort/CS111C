@@ -87,16 +87,17 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
     // MAKE SURE TO TAKE ADVANTAGE OF THE SORTED NATURE OF THE BST!
     public int countEntriesNonRecursive(T target) {
         int count = 0;
-        BinaryNode <T> currentNode = getRootNode(); 
+        BinaryNode <T> currentNode = getRootNode();
+
         while (currentNode != null) {
             int compareVal = currentNode.getData().compareTo(target);
             if (compareVal == 0) {
                 count++;
                 currentNode = currentNode.getLeftChild();
             } else if (compareVal < 0) {
-                currentNode = currentNode.getLeftChild();
-            } else {
                 currentNode = currentNode.getRightChild();
+            } else {
+                currentNode = currentNode.getLeftChild();
             }
         }
         return count;
