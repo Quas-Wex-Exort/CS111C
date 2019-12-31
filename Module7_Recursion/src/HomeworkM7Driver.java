@@ -221,6 +221,27 @@ public class HomeworkM7Driver {
 		}
 		//return qNotFollowedByUHelper(word, start + 1, next + 1);
 	}
+    
+    /*
+    public static boolean qNotFollowedByU(String word) {
+        return recursiveCount(word, 'q', 'u', 0) >= 1;
+    }
+
+    private static int recursiveCount(String word, char q, char u, int index) {
+        int count = 0;
+        int last = word.length() - 1;
+        word = word.toLowerCase();
+        if (index < word.length()) {
+            if (word.charAt(last) == q) {
+                count = 1;
+            } else if (word.charAt(index) == q && word.charAt(index + 1) != u) {
+                count = 1;
+            }
+
+            count = count + recursiveCount(word, q, u, index + 1);
+        }
+        return count;
+    }
 	*/
 
 	// Proposed solution
